@@ -101,7 +101,7 @@ public class Employee {
             return this;
         }
 
-        public EmployeeBuilder setCarnumber (String carNumber){
+        public EmployeeBuilder setCarNumber (String carNumber){
             employee.carNumber = carNumber;
             return this;
         }
