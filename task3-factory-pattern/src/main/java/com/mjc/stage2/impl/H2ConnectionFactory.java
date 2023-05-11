@@ -22,6 +22,8 @@ public class H2ConnectionFactory implements ConnectionFactory {
 
             Class.forName(appProps.getProperty("jdbc_driver"));
 
+
+
             connection = DriverManager.getConnection(appProps.getProperty("db_url"),
                     appProps.getProperty("user"),
                     appProps.getProperty("password"));

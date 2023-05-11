@@ -8,9 +8,14 @@ public class ThreadSafeSingleton {
 
     public static ThreadSafeSingleton getInstance() {
         ThreadSafeSingleton threadSafeSingleton = instance;
-        if (threadSafeSingleton == null){
-            instance = new ThreadSafeSingleton();
+        if (threadSafeSingleton != null){
+            return threadSafeSingleton;
         }
-        return instance;
+        synchronized (ThreadSafeSingleton.class){
+            if (instance == null) {
+                instance = new ThreadSafeSingleton();
+            }
+            return instance;
+        }
     }
 }
